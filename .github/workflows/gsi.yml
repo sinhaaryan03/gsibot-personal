@@ -32,6 +32,7 @@ jobs:
               git config --global user.name "ElytrA8"
               git config --global user.email "manofuranium@gmail.com"
               git clone --recurse-submodules https://github.com/JamieHoSzeYui/ErfanGSIs
+              sudo apt-get install -y aria2
               aria2c tdrive.elytra8.workers.dev/source.jar
      
        - name: Setup ErfanGsis
