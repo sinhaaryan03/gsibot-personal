@@ -60,7 +60,7 @@ jobs:
              echo "bot-token=${{ secrets.BOTKEY }}" >> "config.prop"
              echo "bot-master=${{ secrets.USERKEY }}" >> "config.prop"
              
-      - name: Run bobobot
+       - name: Run bobobot
          continue-on-error: true
          timeout-minutes: 350
          run: |
