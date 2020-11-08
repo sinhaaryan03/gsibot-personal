@@ -33,7 +33,7 @@ jobs:
               git config --global user.email "manofuranium@gmail.com"
               git clone --recurse-submodules https://github.com/JamieHoSzeYui/ErfanGSIs
               sudo apt-get install -y aria2
-              aria2c https://tdrive.elytra8.workers.dev/source.jar
+
      
        - name: Setup ErfanGsis
          continue-on-error: true
@@ -46,7 +46,7 @@ jobs:
          continue-on-error: true
          timeout-minutes: 3
          run: |
-              java -jar source.jar
+              java -jar BoboBot.jar
          
        - name: Add values
          continue-on-error: true
@@ -65,7 +65,8 @@ jobs:
          continue-on-error: true
          timeout-minutes: 350
          run: |
-              sudo java -jar source.jar
+              sudo chmod -R 0777 *
+              sudo java -jar BoboBot.jar
          
        - name: commit loop
          continue-on-error: true
