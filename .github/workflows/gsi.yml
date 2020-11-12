@@ -52,7 +52,7 @@ jobs:
          continue-on-error: true
          timeout-minutes: 1
          run: |
-             rm -rf configs/config.prop
+             rm -rf configs/config.prop && rm -rf configs/sf-creds.config
              cd configs
              touch config.prop
              echo "#Bo³+t config file" >> "config.prop"
@@ -60,7 +60,16 @@ jobs:
              echo "bot-username=${{ secrets.BOTUN }}" >> "config.prop"
              echo "bot-token=${{ secrets.BOTKEY }}" >> "config.prop"
              echo "bot-master=${{ secrets.USERKEY }}" >> "config.prop"
-             
+             touch sf-creds.config
+             echo "#Config file" >> "sf-creds.config"
+             echo "#Sun Nov 08 09:30:49 PST 2020" >> "sf-creds.config"
+             echo "bot-sf-user=${{ secrets.SFUSER }}" >> "sf-creds.config"
+             echo "bot-send-announcement=false" >> "sf-creds.config"
+             echo "bot-sf-proj=${{ secrets.PROJECT }}" >> "sf-creds.config"
+             echo "bot-announcement-id=none" >> "sf-creds.config"
+             echo "bot-sf-pass=${{ secrets.SFPASS }}" >> "sf-creds.config"
+             echo "bot-sf-host=frs.sourceforge.net" >> "sf-creds.config"
+
        - name: Run bobobot
          continue-on-error: true
          timeout-minutes: 350
