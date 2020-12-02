@@ -7,7 +7,7 @@ env:
   TZ: Asia/Manila
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     timeout-minutes: 525600
 
     steps:
@@ -35,7 +35,7 @@ jobs:
               sudo apt-get install -y aria2
 
      
-       - name: Setup ErfanGsis
+       - name: Setup Erfan Tools
          continue-on-error: true
          timeout-minutes: 10
          run: |
